@@ -63,11 +63,13 @@ footer a{color:#10b981}
 <meta property="og:url" content="https://clawboxai.dev/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ClawBox AI">
-<meta property="og:image" content="https://openclawhardware.dev/clawbox-1.webp">
+<meta property="og:image" content="https://clawboxai.dev/clawbox-1.webp">
+<meta property="og:image:alt" content="ClawBox AI — private AI hardware appliance running OpenClaw on NVIDIA Jetson Orin Nano">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ClawBox AI — Private AI Hardware, €549 One-Time">
 <meta name="twitter:description" content="ClawBox AI: private, offline AI hardware powered by NVIDIA Jetson Orin Nano. Your ClawBox AI. Your data. No cloud.">
-<meta name="twitter:image" content="https://openclawhardware.dev/clawbox-1.webp">
+<meta name="twitter:image" content="https://clawboxai.dev/clawbox-1.webp">
+<meta name="twitter:image:alt" content="ClawBox AI hardware device photographed on a desk">
 <meta name="revised" content="2026-04-23">
 </head>
 <body>
@@ -86,6 +88,11 @@ footer a{color:#10b981}
 </div>
 
 <section>
+<figure style="margin:0 auto 40px;max-width:820px;text-align:center">
+  <img src="/clawbox-1.webp" alt="ClawBox AI hardware appliance — NVIDIA Jetson Orin Nano in carbon fiber case" width="820" height="547" loading="eager" decoding="async" style="width:100%;height:auto;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.35)">
+  <figcaption style="margin-top:10px;font-size:0.9rem;color:#94a3b8">ClawBox AI — the private AI appliance, pre-configured and ready in under 5 minutes.</figcaption>
+</figure>
+
 <h2>What is ClawBox AI?</h2>
 <div class="content-section">
 <p>ClawBox AI is a dedicated hardware device that brings artificial intelligence directly into your home or office — completely private, completely offline, completely yours. Built on the NVIDIA Jetson Orin Nano 8GB processor with 512GB of NVMe storage, ClawBox AI runs <strong>OpenClaw</strong>, a powerful open-source AI platform designed for privacy-first computing.</p>
@@ -155,6 +162,11 @@ footer a{color:#10b981}
 <h3>🎤 Voice & Transcription</h3>
 <p>Record voice notes and have ClawBox AI transcribe them locally. Process audio files, extract insights, and create searchable archives of your voice data.</p>
 </div>
+
+<figure style="margin:32px auto;max-width:820px;text-align:center">
+  <img src="/clawbox-2.webp" alt="ClawBox AI internal view — 512GB NVMe SSD and Jetson Orin Nano 8GB compute module" width="820" height="547" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px">
+  <figcaption style="margin-top:10px;font-size:0.9rem;color:#94a3b8">Inside every ClawBox AI: a Jetson Orin Nano 8GB + 512GB NVMe storage.</figcaption>
+</figure>
 
 <h2>Hardware & Specifications</h2>
 <div class="content-section">
@@ -281,6 +293,11 @@ footer a{color:#10b981}
 <p>Updates to OpenClaw software are pushed automatically over-the-air when connected to the internet. No manual intervention required. Hardware never becomes obsolete — it continues running updated software indefinitely.</p>
 </details>
 
+<figure style="margin:32px auto;max-width:820px;text-align:center">
+  <img src="/clawbox-3.webp" alt="ClawBox AI on a developer's desk running private AI locally — no cloud, no subscriptions" width="820" height="547" loading="lazy" decoding="async" style="width:100%;height:auto;border-radius:16px">
+  <figcaption style="margin-top:10px;font-size:0.9rem;color:#94a3b8">ClawBox AI fits next to your router or on your desk — silent, 15W, always on.</figcaption>
+</figure>
+
 <h2>Who is ClawBox AI for?</h2>
 <div class="content-section">
 <h3>Developers who want a real ClawBox AI sandbox</h3>
@@ -301,6 +318,34 @@ footer a{color:#10b981}
 <p>Plenty of enthusiasts try to roll their own local AI rig — a spare GPU, Ollama, some scripts. ClawBox AI exists because building that cleanly takes weeks and the result is usually fragile. ClawBox AI is a finished product: the hardware is pre-selected for AI inference (NVIDIA Jetson Orin Nano, 8GB unified memory, 512GB NVMe), the OpenClaw software is tuned to that hardware, and the whole ClawBox AI unit is covered by a 2-year warranty from IDRobots.</p>
 <p>With a DIY build you get flexibility but pay for it in power (a typical desktop GPU idles at 40–60W vs. 5–8W for ClawBox AI), noise (ClawBox AI is silent), and time (debugging CUDA driver mismatches is nobody's idea of fun). With ClawBox AI you get a device that already works — unbox, power up, scan QR, start chatting. If you later want to swap models or add skills, you still can: ClawBox AI is fully open-source and gives you SSH access on day one.</p>
 <p>The trade-off is simple. DIY: cheaper parts bill, more hours, less polish. ClawBox AI: higher upfront (€549), zero integration work, runs 24/7 for the price of an LED bulb. Most buyers who have tried both end up keeping a ClawBox AI on their desk because it just works.</p>
+</div>
+
+<h2>ClawBox AI power consumption & running costs — real numbers</h2>
+<div class="content-section">
+<p>One of the top questions before buying ClawBox AI is "what will this cost me to run?" The honest answer: less than almost anything else in your home. ClawBox AI draws 5–8 watts at idle and peaks at 15 watts during active inference. At the European average of €0.28 per kWh that works out to roughly €12–€37 per year in electricity if you leave your ClawBox AI running 24/7, 365 days a year.</p>
+<p>For comparison, a single ChatGPT Plus subscription is €240 per year; a gaming desktop running local LLMs idles at 40–60W (≈ €100–€150/year just to keep the machine alive, before the GPU spins up). A Synology NAS runs 20–30W. Even a Raspberry Pi 5 with an AI HAT pulls more wattage than ClawBox AI once the accelerator is loaded. In other words: ClawBox AI is the cheapest-to-run 24/7 AI appliance on the market that still delivers useful inference speed.</p>
+<p>Silent too — ClawBox AI uses a fanless or low-RPM passive cooling setup depending on revision, so there is no continuous fan noise. You can put ClawBox AI on your desk, in a bookshelf, or next to your router without hearing it. For homes and small offices that care about energy and noise, ClawBox AI is the frictionless way to always have an AI assistant available.</p>
+</div>
+
+<h2>How ClawBox AI protects your privacy — the exact data flow</h2>
+<div class="content-section">
+<p>"ClawBox AI is private" is a claim worth unpacking. Here is what actually happens when you use ClawBox AI:</p>
+<ol style="color:#cbd5e1;line-height:1.9;margin-left:20px;padding-left:20px">
+  <li><strong>Your message enters ClawBox AI over your local network.</strong> Telegram, WhatsApp, Discord, or the web UI all route messages through the encrypted channel you already use with that platform — and the final hop terminates on your ClawBox AI, not on a cloud server.</li>
+  <li><strong>ClawBox AI runs inference locally.</strong> The model weights, the context window, the prompt, and the response all live on the ClawBox AI NVMe drive. Nothing about that turn is sent to OpenAI, Anthropic, Google, or anyone else unless you explicitly configure an external API skill.</li>
+  <li><strong>History is stored on the ClawBox AI device only.</strong> Conversation memory, learned preferences, and any documents you upload all stay on the ClawBox AI SSD. You can wipe ClawBox AI at any time with a factory-reset button — no cloud sync, no orphaned data anywhere.</li>
+  <li><strong>Outbound traffic is explicit.</strong> ClawBox AI only phones outward when a skill needs to (fetch a website, send a Telegram message, call a weather API). There is no background telemetry from ClawBox AI itself — no crash reporting, no analytics, no usage beaconing.</li>
+</ol>
+<p>That means for a journalist, a lawyer, a therapist, or a privacy-conscious family, ClawBox AI is a real answer to the "we do not want our conversations on someone else's server" requirement. Many ChatGPT users get uncomfortable the moment a prompt mentions a client, a patient, or a source — ClawBox AI removes that friction because the ClawBox AI box itself is the only place that sees the data.</p>
+</div>
+
+<h2>ClawBox AI vs. Raspberry Pi AI builds — why most people switch</h2>
+<div class="content-section">
+<p>Raspberry Pi 5 with an AI HAT is the closest DIY alternative to ClawBox AI in form factor and price range, so it is worth comparing honestly. A Pi 5 + AI HAT + NVMe + case typically lands around €220–€280 in parts. ClawBox AI is €549 assembled, configured, warrantied. On paper the Pi wins on price. In practice, three things usually pull buyers to ClawBox AI:</p>
+<p><strong>Inference speed.</strong> A Jetson Orin Nano 8GB (the core of ClawBox AI) runs Llama 3 8B at 15–25 tokens per second. A Pi 5 with a Hailo-8L AI HAT can run small models but throttles hard on 7B+ parameter models that most people actually want. If you want your AI assistant to answer in plain English in under 2 seconds, ClawBox AI is meaningfully faster.</p>
+<p><strong>Memory headroom.</strong> ClawBox AI ships with 8GB unified memory accessible to the GPU. That is enough to load Llama 3 8B in 4-bit quantization with room for a generous context window. A Pi 5 peaks at 8GB system RAM with only a slice available to the accelerator, so larger models page heavily. For agentic multi-step tasks where ClawBox AI shines, that headroom matters.</p>
+<p><strong>Software integration.</strong> ClawBox AI is not just hardware — it is hardware plus OpenClaw, pre-configured, versioned, and updated. A DIY Pi build means you hand-pick a runtime (Ollama, LocalAI, vLLM), glue it to a chat frontend, set up a reverse proxy, wire in Tailscale, maintain the whole thing. ClawBox AI ships with 580+ skills, a dashboard, a mobile setup wizard, and over-the-air updates from day one.</p>
+<p>For makers who love tinkering, a Pi build is fun. For anyone who wants an AI assistant that just works, ClawBox AI is the faster path. Many ClawBox AI customers explicitly told us they tried a Pi first — ClawBox AI is usually where they land when the DIY path runs out of steam.</p>
 </div>
 
 <h2>Ready to Get Started?</h2>
