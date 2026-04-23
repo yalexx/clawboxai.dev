@@ -348,6 +348,127 @@ footer a{color:#10b981}
 <p>For makers who love tinkering, a Pi build is fun. For anyone who wants an AI assistant that just works, ClawBox AI is the faster path. Many ClawBox AI customers explicitly told us they tried a Pi first — ClawBox AI is usually where they land when the DIY path runs out of steam.</p>
 </div>
 
+<h2>The ClawBox AI software stack — layer by layer</h2>
+<div class="content-section">
+<figure style="margin:20px auto;max-width:720px">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="100%" height="auto" role="img" aria-labelledby="stack-title stack-desc">
+  <title id="stack-title">ClawBox AI software and hardware stack diagram</title>
+  <desc id="stack-desc">Four layers of the ClawBox AI stack from bottom to top: NVIDIA Jetson Orin Nano 8GB hardware, Ubuntu Linux with CUDA and TensorRT, OpenClaw platform with 580+ skills, and chat interfaces for Telegram WhatsApp Discord web.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="420" fill="url(#bg)" rx="16"/>
+  <text x="360" y="34" text-anchor="middle" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="20" font-weight="700">The ClawBox AI Stack</text>
+  <text x="360" y="56" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12">67 TOPS · 15W · €549 one-time · No cloud</text>
+  <rect x="80" y="320" width="560" height="60" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="1.5"/>
+  <text x="100" y="348" fill="#d1fae5" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Hardware</text>
+  <text x="100" y="368" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="12">NVIDIA Jetson Orin Nano 8GB · 512GB NVMe · Carbon-fiber case · 15W</text>
+  <rect x="80" y="250" width="560" height="60" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+  <text x="100" y="278" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">OS &amp; Drivers</text>
+  <text x="100" y="298" fill="#cbd5e1" font-family="system-ui,sans-serif" font-size="12">Ubuntu Linux · NVIDIA JetPack · CUDA · TensorRT · Docker</text>
+  <rect x="80" y="180" width="560" height="60" rx="10" fill="#312e81" stroke="#6366f1" stroke-width="1.5"/>
+  <text x="100" y="208" fill="#e0e7ff" font-family="system-ui,sans-serif" font-size="13" font-weight="700">OpenClaw Platform</text>
+  <text x="100" y="228" fill="#c7d2fe" font-family="system-ui,sans-serif" font-size="12">Runtime · 580+ skills · MCP · Dashboard · Memory · Skill store</text>
+  <rect x="80" y="110" width="560" height="60" rx="10" fill="#7c2d12" stroke="#f97316" stroke-width="1.5"/>
+  <text x="100" y="138" fill="#ffedd5" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Interfaces</text>
+  <text x="100" y="158" fill="#fed7aa" font-family="system-ui,sans-serif" font-size="12">Telegram · WhatsApp · Discord · Web UI · Voice · Webhooks</text>
+  <text x="360" y="405" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">clawboxai.dev · Every ClawBox AI ships with all four layers pre-configured.</text>
+</svg>
+<figcaption style="margin-top:10px;font-size:0.9rem;color:#94a3b8;text-align:center">Every ClawBox AI is a full stack — hardware, OS, OpenClaw platform, and chat interfaces — configured before it leaves the factory.</figcaption>
+</figure>
+<p>Every layer of the ClawBox AI stack is deliberate. At the bottom: a <strong>Jetson Orin Nano 8GB</strong> chosen because it is the sweet spot of AI throughput per watt for a desk-sized device. Above it: Ubuntu with NVIDIA's JetPack, so CUDA and TensorRT are already tuned for the exact silicon inside your ClawBox AI. Above that: OpenClaw, the platform that turns raw inference into a useful assistant — skill store, memory, dashboard, scheduler. On top: the chat surfaces you already use. When you unbox a ClawBox AI, those four layers are already wired together. You never touch a driver, a systemd unit, or a CUDA mismatch. That is what "pre-configured" actually means for ClawBox AI.</p>
+</div>
+
+<h2>ClawBox AI privacy model — the exact data flow (visualised)</h2>
+<div class="content-section">
+<figure style="margin:20px auto;max-width:720px">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="100%" height="auto" role="img" aria-labelledby="flow-title flow-desc">
+  <title id="flow-title">ClawBox AI private data flow diagram</title>
+  <desc id="flow-desc">Diagram showing that prompts sent to ClawBox AI from your chat app stay on your local network: inference runs on the ClawBox AI device, conversation memory stays on the ClawBox AI NVMe drive, and no data is sent to OpenAI, Anthropic, or Google unless an explicit skill requires it.</desc>
+  <rect width="720" height="300" fill="#0f172a" rx="16"/>
+  <text x="360" y="32" text-anchor="middle" fill="#f8fafc" font-family="system-ui,sans-serif" font-size="18" font-weight="700">ClawBox AI — Private Data Flow</text>
+  <rect x="30" y="110" width="170" height="100" rx="12" fill="#1e293b" stroke="#64748b"/>
+  <text x="115" y="148" text-anchor="middle" fill="#e2e8f0" font-family="system-ui,sans-serif" font-size="13" font-weight="700">Your phone / laptop</text>
+  <text x="115" y="170" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">Telegram · WhatsApp</text>
+  <text x="115" y="186" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="11">Discord · Web UI</text>
+  <rect x="275" y="90" width="170" height="140" rx="12" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="360" y="128" text-anchor="middle" fill="#d1fae5" font-family="system-ui,sans-serif" font-size="15" font-weight="800">ClawBox AI</text>
+  <text x="360" y="150" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="11">(your home network)</text>
+  <text x="360" y="178" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="11">🧠 Inference runs here</text>
+  <text x="360" y="196" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="11">💾 Memory stored here</text>
+  <text x="360" y="214" text-anchor="middle" fill="#a7f3d0" font-family="system-ui,sans-serif" font-size="11">🔒 Nothing leaves by default</text>
+  <rect x="520" y="110" width="170" height="100" rx="12" fill="#1e293b" stroke="#475569" stroke-dasharray="4 4"/>
+  <text x="605" y="142" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12" font-weight="700">Cloud services</text>
+  <text x="605" y="162" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">OpenAI · Anthropic</text>
+  <text x="605" y="178" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">Google · others</text>
+  <text x="605" y="198" text-anchor="middle" fill="#f87171" font-family="system-ui,sans-serif" font-size="11" font-weight="600">Only on explicit skill</text>
+  <defs>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#10b981"/></marker>
+    <marker id="arrowGrey" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker>
+  </defs>
+  <line x1="200" y1="160" x2="275" y2="160" stroke="#10b981" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <line x1="275" y1="175" x2="200" y2="175" stroke="#10b981" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <line x1="445" y1="160" x2="520" y2="160" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arrowGrey)"/>
+  <text x="360" y="275" text-anchor="middle" fill="#64748b" font-family="system-ui,sans-serif" font-size="11">Solid green arrows = always happens. Dashed grey = only when you explicitly add a cloud skill.</text>
+</svg>
+<figcaption style="margin-top:10px;font-size:0.9rem;color:#94a3b8;text-align:center">The ClawBox AI privacy model in one picture: your data stays in the middle box.</figcaption>
+</figure>
+</div>
+
+<h2>Which AI models can you run on ClawBox AI?</h2>
+<div class="content-section">
+<p>ClawBox AI runs <strong>open-weight language models</strong> locally on the Jetson Orin Nano GPU. Because ClawBox AI uses NVIDIA CUDA + TensorRT, most popular open models ship with Jetson-compatible quantised builds. These are the models most ClawBox AI owners use day to day:</p>
+<ul style="color:#cbd5e1;line-height:1.9;margin-left:20px;padding-left:20px">
+  <li><strong>Llama 3 8B (Meta)</strong> — the default ClawBox AI chat model. Balanced, strong reasoning, excellent for email, chat, writing help. Runs at ~15–25 tokens/sec on ClawBox AI.</li>
+  <li><strong>Gemma 2 9B (Google)</strong> — excellent for summarisation and structured output. Popular choice on ClawBox AI for research workflows.</li>
+  <li><strong>Mistral 7B / Mistral Nemo</strong> — fast and compact. Good for ClawBox AI users who want lower latency on short exchanges.</li>
+  <li><strong>Qwen 2.5 7B (Alibaba)</strong> — strong coding ability. A favourite among developer ClawBox AI owners.</li>
+  <li><strong>Phi-3 Mini (Microsoft)</strong> — lightweight, very fast. Great as a ClawBox AI background skill-routing model.</li>
+  <li><strong>Whisper (OpenAI, open-weights)</strong> — real-time voice transcription on ClawBox AI. Roughly 12× realtime on the small model.</li>
+  <li><strong>Embedding models (all-MiniLM, bge-small)</strong> — used by ClawBox AI for local RAG and memory search.</li>
+</ul>
+<p>ClawBox AI uses <a href="https://ollama.com/" rel="nofollow noopener" target="_blank">Ollama</a> and llama.cpp under the hood, so switching models on ClawBox AI is a one-line operation from the OpenClaw dashboard. You can also bring your own model: any GGUF or TensorRT-LLM build that fits in 8GB will load on ClawBox AI. No cloud license, no API key, no token meter.</p>
+</div>
+
+<h2>Real ClawBox AI use cases — day in the life</h2>
+<div class="content-section">
+<h3>Morning: inbox and calendar</h3>
+<p>Your ClawBox AI has already scanned your email overnight. Over Telegram, you ask "what's new this morning?" ClawBox AI replies with a 4-line summary of actual decisions you need to make, flagged by urgency. Your ClawBox AI also pre-drafts a reply to the supplier quote that came in at 02:00. Nothing touched the cloud. Your supplier's prices don't end up in someone's training data.</p>
+<h3>Midday: research with browser automation</h3>
+<p>You need competitor pricing on 30 URLs. You send ClawBox AI the list. It spins up a headless browser on-box, scrapes the pricing fields, and returns a clean table in two minutes. Your ClawBox AI uses the 512GB NVMe to cache screenshots locally for audit. Normally this is the kind of task that burns through cloud credits — on ClawBox AI it is one unit of electricity.</p>
+<h3>Afternoon: code help</h3>
+<p>You are debugging a regex. Instead of pasting proprietary code into ChatGPT, you ask ClawBox AI in a private Discord channel. The Qwen 2.5 model on your ClawBox AI reads the stack trace, suggests a fix, and explains the edge case. Your source code never left your desk.</p>
+<h3>Evening: home control</h3>
+<p>You say "ClawBox AI, dim the lights and queue tomorrow's prep." ClawBox AI calls your Home Assistant instance over MQTT (local network), sets the scene, and schedules tomorrow's morning brief to your inbox. One device, many jobs.</p>
+<h3>Night: silent duty</h3>
+<p>ClawBox AI is drawing 5W in the corner of your office. It is watching for messages, running scheduled tasks, and serving as the local brain of your network. No fan noise, no cloud bill, no attack surface for a breach to leak your data. That is the ClawBox AI baseline.</p>
+</div>
+
+<h2>ClawBox AI glossary — terms you will see around this product</h2>
+<div class="content-section">
+<dl style="color:#cbd5e1;line-height:1.8">
+  <dt style="color:#10b981;font-weight:700;margin-top:14px">NVIDIA Jetson Orin Nano</dt>
+  <dd style="margin-left:18px">The system-on-module inside every ClawBox AI. 8GB unified memory, integrated GPU, purpose-built for edge AI. This is what gives ClawBox AI real inference speed while staying at 15W.</dd>
+  <dt style="color:#10b981;font-weight:700;margin-top:14px">TOPS (Tera Operations Per Second)</dt>
+  <dd style="margin-left:18px">A rough measure of AI compute throughput. ClawBox AI delivers 67 TOPS at sparse int8. For context: a Raspberry Pi 5 with a Hailo-8L HAT tops out around 13 TOPS. ClawBox AI has roughly 5× the headroom.</dd>
+  <dt style="color:#10b981;font-weight:700;margin-top:14px">NVMe SSD</dt>
+  <dd style="margin-left:18px">The 512GB fast storage inside ClawBox AI. Fast enough to stream model weights at inference time and to keep your full local memory, logs, and browser cache local.</dd>
+  <dt style="color:#10b981;font-weight:700;margin-top:14px">OpenClaw</dt>
+  <dd style="margin-left:18px">The open-source platform that powers ClawBox AI — runtime, skill store, dashboard, memory. You can run OpenClaw elsewhere, but ClawBox AI is the reference hardware it is tuned for.</dd>
+  <dt style="color:#10b981;font-weight:700;margin-top:14px">Quantisation</dt>
+  <dd style="margin-left:18px">Shrinking a model so it fits in less memory. ClawBox AI typically runs 4-bit or 8-bit quantised builds, which keeps quality high while fitting in the 8GB of the Jetson inside ClawBox AI.</dd>
+  <dt style="color:#10b981;font-weight:700;margin-top:14px">RAG (Retrieval-Augmented Generation)</dt>
+  <dd style="margin-left:18px">Giving your ClawBox AI access to your own documents by embedding them and retrieving relevant chunks at query time. ClawBox AI supports local RAG out of the box — your documents never leave the device.</dd>
+  <dt style="color:#10b981;font-weight:700;margin-top:14px">MCP (Model Context Protocol)</dt>
+  <dd style="margin-left:18px">An open protocol for connecting models to tools and data sources. ClawBox AI speaks MCP natively, which is how OpenClaw skills integrate with your ClawBox AI on day one.</dd>
+  <dt style="color:#10b981;font-weight:700;margin-top:14px">Edge AI</dt>
+  <dd style="margin-left:18px">The broader category ClawBox AI sits in: AI that runs at the edge of the network instead of in a cloud data centre. ClawBox AI is one of the cleanest consumer-priced edge-AI appliances on the market.</dd>
+</dl>
+</div>
+
 <h2>Ready to Get Started?</h2>
 <div class="highlight">
 <p style="margin:0"><strong>ClawBox AI: Private, local AI processing that you own and control.</strong></p>
